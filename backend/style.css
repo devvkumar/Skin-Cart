@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#background-video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.wrapper{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: #fff;
+}
+
+.input-box box-icon{
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    transform: translate(-50%);
+    font-size: 20px;
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 5px;
+}
+
+.remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover{
+    text-decoration: underline;
+}
+
+.popup {
+	background: rgba(34, 34, 34, 0.95);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.4s,
+	 			      visibility 0.4s;
+}
+
+.popup--is-visible {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup__container {
+	background: #fff;
+	position: relative;
+	transform: translate(0, -2.5rem);
+	/* transform: translate3d(0, -2.5rem, 0);		/* Use this declaration if you want to force hardware acceleration */
+  /* backface-visibility: hidden;  			      /* Use this declaration if you want to force hardware acceleration */
+  transition: transform 0.4s;
+}
+
+.popup__container-is-lower {
+	transform: translate(0, 0);
+	/* transform: translate3d(0, 0, 0);					/* Use this declaration if you want to force hardware acceleration */
+  /* backface-visibility: hidden;  			  		/* Use this declaration if you want to force hardware acceleration */
+}
+
+/*
+|----------------------------------------
+| Styles from a separate, independent component (CSS close button) https://codepen.io/diptajbasu/pen/YyeRdr
+| are mixed into this component
+|----------------------------------------
+*/
+.popup__close {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	width: 1.875rem;
+	height: 1.875rem;
+}
+
+.popup__close::before,
+.popup__close::after {
+	background: #222;
+	content: '';
+	position: absolute;
+	top: 0.875rem;
+	width: 1.625rem;
+	height: 0.1875rem;  /* Thickness of lines. 3px / 16 = 0.1875rem */
+}
+
+.popup__close::before {
+	transform: rotate(45deg);
+	left: 0.125rem;
+}
+
+.popup__close::after {
+	transform: rotate(-45deg);
+	right: 0.125rem;
+}
+
+/* Make text invisible but allow screen readers to know it exists */
+.invisible-text {
+	display: inline-block;
+	overflow: hidden;
+	text-indent: 100%;
+	color: transparent;
+	white-space: nowrap;
+}
